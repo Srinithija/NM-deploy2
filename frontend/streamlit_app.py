@@ -61,7 +61,7 @@ if image and st.button(" Predict Digit"):
             img_bytes.seek(0)
 
             # Send request to backend
-            res = requests.post("http://localhost:5000/predict", files={"file": img_bytes})
+            res = requests.post("https://your-flask-api.onrender.com/predict", files={"file": img_bytes})
             result = res.json()
 
             if "error" in result:
