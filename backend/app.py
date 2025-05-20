@@ -9,7 +9,10 @@ CORS(app)
 
 # Load the trained digit model
 model = load_model("digit_recognition_model.h5")
-
+@app.route('/')
+def home():
+    return "Digit Recognition API is running", 200
+    
 @app.route("/predict", methods=["POST"])
 def predict():
     if "file" not in request.files:
@@ -36,5 +39,6 @@ def predict():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
+# Remove debug mode
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000)
