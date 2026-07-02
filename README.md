@@ -148,6 +148,4 @@ The application displays:
 
 ---
 
-## 👩‍💻 Author
 
-**Srinithija Sivakumar**
